@@ -1,0 +1,39 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:TypeForm="clr-namespace:SQLScriptGenerator.UserControle.TypeForm" x:Name="XAMLFormData"
+             x:Class="SQLScriptGenerator.UserControle.FormData"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800" FontFamily="Calibri">
+    <Grid>
+        <Grid x:Name="MainGrid" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="Header" Height="Auto" />
+                <RowDefinition x:Name="TypeForm" Height="6*" />
+            </Grid.RowDefinitions>
+            <GroupBox Header="Base info" Margin="0" Grid.Row="0">
+                <DockPanel x:Name="BaseInfoContainer" LastChildFill="False" Margin="0,0,0,0" Grid.Row="1" Grid.RowSpan="2">
+                    <Label Height="32" VerticalAlignment="Top" Content="Base" VerticalContentAlignment="Center" />
+                    <TextBox Height="23" TextWrapping="Wrap" Text="" Width="120" VerticalContentAlignment="Center" TabIndex="3" />
+                    <Label Content="Shéma" Height="32" VerticalAlignment="Top" VerticalContentAlignment="Center" />
+                    <TextBox TextWrapping="Wrap" Text="" Width="120" Margin="0" Height="23" VerticalContentAlignment="Center" TabIndex="4" />
+                </DockPanel>
+            </GroupBox>
+            <GroupBox Header="Script Info" Margin="0" Grid.Row="2" TabIndex="6">
+                <TabControl x:Name="TypeDisplay" Margin="0" TabIndex="5">
+                    <TabItem x:Name="TableTab" Header="Table">
+                        <TypeForm:TableForm TabIndex="6" />
+                    </TabItem>
+                    <TabItem x:Name="ProcTab" Header="Procédure" TabIndex="7">
+                        <TypeForm:ProcForm />
+                    </TabItem>
+                    <TabItem x:Name="VueTab" Header="Vue" TabIndex="8">
+                        <TypeForm:VueForm />
+                    </TabItem>
+                </TabControl>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</UserControl>
